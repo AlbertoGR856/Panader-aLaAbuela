@@ -10,13 +10,22 @@ package PanaderiaLaAbuela;
  * @author GR6
  */
 public enum BolsasProductos {
-    
-    BOLSA_1(1, "botella de monster "),
-    BOLSA_2(2, "bolsa de patatas fritas"),
-    BOLSA_3(3, "pack de latas de coca-cola "),
-    BOLSA_4(4, "bolsa de papa-delta "),
-    BOLSA_5(5, "gusanitos RISI");
-    
+
+    BOLSA_1(1, "bolsita de chucherías, red bull,\n"
+            + "coca-cola, 2 barras de pan, botella de\n"
+            + "oxígeno activo, lays sabor campesinas,\n"
+            + "botella de monster "),
+    BOLSA_2(2, " bolsa de patatas fritas, pack de latas de coca-cola, "
+            + "bolsa de papa-delta, gusanitos\n"
+            + "RISI, paquete de medianoches,"),
+    BOLSA_3(3, "bolsa de patatas fritas, pack de latas de coca-cola, "
+            + "paquete de donuts, bolsa de palomitas sabor ketchup, "
+            + "judías de lata merca-power, azúcar."),
+    BOLSA_4(4, "pack de latas de coca-cola, bolsita de chucherías, red bull, "
+            + "coca-cola, 2 barras de pan, botella de oxígeno activo, "
+            + "lays sabor campesinas"),
+    BOLSA_5(5, "configurable pero no tendrá descuento");
+
     private int referenciaBolsaProductos;
     private String nombreBolsaProductos;
 
@@ -40,7 +49,10 @@ public enum BolsasProductos {
     public void setNombreBolsaProductos(String nombreBolsaProductos) {
         this.nombreBolsaProductos = nombreBolsaProductos;
     }
-    
-    
-    
+
+    @Override
+    public String toString() {
+        return "BolsasProductos{" + "referenciaBolsaProductos=" + referenciaBolsaProductos + ", nombreBolsaProductos=" + nombreBolsaProductos + '}';
+    }
+
 }
