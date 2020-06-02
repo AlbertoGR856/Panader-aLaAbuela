@@ -11,20 +11,20 @@ package PanaderiaLaAbuela;
  */
 public enum BolsasProductos {
 
-    BOLSA_1(1, "bolsita de chucherías, red bull,\n"
+    BOLSA_1(13, "bolsita de chucherías, red bull,\n"
             + "coca-cola, 2 barras de pan, botella de\n"
             + "oxígeno activo, lays sabor campesinas,\n"
             + "botella de monster "),
-    BOLSA_2(2, " bolsa de patatas fritas, pack de latas de coca-cola, "
+    BOLSA_2(14, " bolsa de patatas fritas, pack de latas de coca-cola, "
             + "bolsa de papa-delta, gusanitos\n"
             + "RISI, paquete de medianoches,"),
-    BOLSA_3(3, "bolsa de patatas fritas, pack de latas de coca-cola, "
+    BOLSA_3(15, "bolsa de patatas fritas, pack de latas de coca-cola, "
             + "paquete de donuts, bolsa de palomitas sabor ketchup, "
             + "judías de lata merca-power, azúcar."),
-    BOLSA_4(4, "pack de latas de coca-cola, bolsita de chucherías, red bull, "
+    BOLSA_4(16, "pack de latas de coca-cola, bolsita de chucherías, red bull, "
             + "coca-cola, 2 barras de pan, botella de oxígeno activo, "
             + "lays sabor campesinas"),
-    BOLSA_5(5, "configurable pero no tendrá descuento");
+    BOLSA_5(17, "configurable pero no tendrá descuento");
 
     private int referenciaBolsaProductos;
     private String nombreBolsaProductos;
