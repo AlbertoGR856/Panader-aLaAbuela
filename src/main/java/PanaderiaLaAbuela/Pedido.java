@@ -24,7 +24,6 @@ public class Pedido {
         this.referencia = Integer.toString(r.nextInt(10000000));
         this.articulosPedido = new ArrayList<>();
         this.bolsaProductosPedido = new ArrayList<>();
-
     }
 
     public void nuevoArticulo(Articulos a) {
