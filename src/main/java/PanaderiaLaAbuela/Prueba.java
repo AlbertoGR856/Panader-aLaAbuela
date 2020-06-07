@@ -13,16 +13,18 @@ import java.util.Scanner;
  * @author GR6
  */
 public class Prueba {
-    
+
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         boolean addElement = true;
-        int sel; 
+        int sel;
+        String cont;
+        Pedido pedido = new Pedido();
         System.out.println("Bienvenido a la panadería de la Abuela");
         System.out.println("Seleccione sus articulos");
         System.out.println("Las bolsas de prodcutos a excepcion de la numero 5 "
                 + "tienen un descuento de 1,5€");
-       do {
+        do {
             System.out.println("Tenemos disponible: \n"
                     + "1. Botella de Monster (" + Articulos.BOTELLA_MONSTER.getPrecioArticulo() + "€)\n"
                     + "2. Bolsa de patatas fritas(" + Articulos.BOLSA_PATATAS_FRITAS.getPrecioArticulo() + "€)\n"
@@ -36,20 +38,119 @@ public class Prueba {
                     + "10. Azúcar(" + Articulos.AZUCAR.getPrecioArticulo() + "€)\n"
                     + "11. Bolsita de chucherías (" + Articulos.BOLSITA_CHUCHERIAS.getPrecioArticulo() + "€)\n"
                     + "12. Red Bull (" + Articulos.RED_BULL.getPrecioArticulo() + "€)"
-                    + "13. Coca-Cola (" + Articulos. COCA_COLA.getPrecioArticulo() + "€)"
+                    + "13. Coca-Cola (" + Articulos.COCA_COLA.getPrecioArticulo() + "€)"
                     + "14. Barras de pan (" + Articulos.BARRAS_PAN.getPrecioArticulo() + "€)"
                     + "15. Botella de oxígeno activo (" + Articulos.BOTELLA_OXIGENO_ACTIVO.getPrecioArticulo() + "€)"
                     + "16. Lays sabor campesinas (" + Articulos.LAYS_CAMPESINAS.getPrecioArticulo() + "€)");
             System.out.print("Selecciona un producto: ");
-     
-              System.out.print("Selecciona un elemento: ");
-            try{
-            sel = s.nextInt();
-            }catch(InputMismatchException ime){
+
+            System.out.print("Selecciona un elemento: ");
+            try {
+                sel = s.nextInt();
+            } catch (InputMismatchException ime) {
                 System.out.println("Introduce un valor correcto. Código de error: " + ime.hashCode());
                 s.next();//Limpiamos el buffer
                 System.out.print("Selecciona un elemento: ");
                 sel = s.nextInt();
             }
-       }
-}
+            switch (sel) {
+                case 1:
+                    pedido.getReferencia().nuevoArticulo(Articulos.BOTELLA_MONSTER);
+                    System.out.println("Has añadido a tu cesta el artículo " + Articulos.BOTELLA_MONSTER.getNombreArticulo() + ". La cuenta asciende a " + Articulos.getReferenciaArticulo().getSubtotal() + "€");
+                    break;
+                case 2:
+                    pedido.getReferencia().nuevoArticulo(Articulos.BOLSA_PATATAS_FRITAS);
+                    System.out.println("Has añadido a tu cesta el artículo " + Articulos.BOLSA_PATATAS_FRITAS.getNombreArticulo() + ". La cuenta asciende a " + Articulos.getReferenciaArticulo().getSubtotal() + "€");
+                    break;
+                case 3:
+                    pedido.getReferencia().nuevoArticulo(Articulos.PACK_LATAS_COCA_COLA);
+                    System.out.println("Has añadido a tu cesta el artículo " + Articulos.PACK_LATAS_COCA_COLA.getNombreArticulo() + ". La cuenta asciende a " + Articulos.getReferenciaArticulo().getSubtotal() + "€");
+                    break;
+                case 4:
+                    pedido.getReferencia().nuevoArticulo(Articulos.BOLSA_PAPA_DELTA);
+                    System.out.println("Has añadido a tu cesta el artículo " + Articulos.BOLSA_PAPA_DELTA.getNombreArticulo() + ". La cuenta asciende a " + Articulos.getReferenciaArticulo().getSubtotal() + "€");
+                    break;
+                case 5:
+                    pedido.getReferencia().nuevoArticulo(Articulos.GUSANITOS_RISI);
+                    System.out.println("Has añadido a tu cesta el artículo " + Articulos.GUSANITOS_RISI.getNombreArticulo() + ". La cuenta asciende a " + Articulos.getReferenciaArticulo().getSubtotal() + "€");
+                    break;
+                case 6:
+                    pedido.getReferencia().nuevoArticulo(Articulos.PAQUETE_MEDIANOCHES);
+                    System.out.println("Has añadido a tu cesta el artículo " + Articulos.PAQUETE_MEDIANOCHES.getNombreArticulo() + ". La cuenta asciende a " + Articulos.getReferenciaArticulo().getSubtotal() + "€");
+                    break;
+                case 7:
+                    pedido.getReferencia().nuevoArticulo(Articulos.PAQUETE_DONUTS);
+                    System.out.println("Has añadido a tu cesta el artículo " + Articulos.PAQUETE_DONUTS.getNombreArticulo() + ". La cuenta asciende a " + Articulos.getReferenciaArticulo().getSubtotal() + "€");
+                    break;
+                case 8:
+                    pedido.getReferencia().nuevoArticulo(Articulos.BOLSA_PALOMITAS_KETCHUP);
+                    System.out.println("Has añadido a tu cesta el artículo " + Articulos.BOLSA_PALOMITAS_KETCHUP.getNombreArticulo() + ". La cuenta asciende a " + Articulos.getReferenciaArticulo().getSubtotal() + "€");
+                    break;
+                case 9:
+                    pedido.getReferencia().nuevoArticulo(Articulos.JUDIAS_LATA_MERCA_POWER);
+                    System.out.println("Has añadido a tu cesta el artículo " + Articulos.JUDIAS_LATA_MERCA_POWER.getNombreArticulo() + ". La cuenta asciende a " + Articulos.getReferenciaArticulo().getSubtotal() + "€");
+                    break;
+                case 10:
+                    pedido.getReferencia().nuevoArticulo(Articulos.AZUCAR);
+                    System.out.println("Has añadido a tu cesta el artículo " + Articulos.AZUCAR.getNombreArticulo() + ". La cuenta asciende a " + Articulos.getReferenciaArticulo().getSubtotal() + "€");
+                    break;
+                case 11:
+                    pedido.getReferencia().nuevoArticulo(Articulos.BOLSITA_CHUCHERIAS);
+                    System.out.println("Has añadido a tu cesta el artículo " + Articulos.BOLSITA_CHUCHERIAS.getNombreArticulo() + ". La cuenta asciende a " + Articulos.getReferenciaArticulo().getSubtotal() + "€");
+                    break;
+                case 12:
+                    pedido.getReferencia().nuevoArticulo(Articulos.RED_BULL);
+                    System.out.println("Has añadido a tu cesta el artículo " + Articulos.RED_BULL.getNombreArticulo() + ". La cuenta asciende a " + Articulos.getReferenciaArticulo().getSubtotal() + "€");
+                    break;
+                case 13:
+                    pedido.getReferencia().nuevoArticulo(Articulos.COCA_COLA);
+                    System.out.println("Has añadido a tu cesta el artículo " + Articulos.COCA_COLA.getNombreArticulo() + ". La cuenta asciende a " + Articulos.getReferenciaArticulo().getSubtotal() + "€");
+                    break;
+                case 14:
+                    pedido.getReferencia().nuevoArticulo(Articulos.BARRAS_PAN);
+                    System.out.println("Has añadido a tu cesta el artículo " + Articulos.BARRAS_PAN.getNombreArticulo() + ". La cuenta asciende a " + Articulos.getReferenciaArticulo().getSubtotal() + "€");
+                    break;
+                case 15:
+                    pedido.getReferencia().nuevoArticulo(Articulos.BOTELLA_OXIGENO_ACTIVO);
+                    System.out.println("Has añadido a tu cesta el artículo " + Articulos.BOTELLA_OXIGENO_ACTIVO.getNombreArticulo() + ". La cuenta asciende a " + Articulos.getReferenciaArticulo().getSubtotal() + "€");
+                    break;
+                case 16:
+                    pedido.getReferencia().nuevoArticulo(Articulos.LAYS_CAMPESINAS);
+                    System.out.println("Has añadido a tu cesta el artículo " + Articulos.LAYS_CAMPESINAS.getNombreArticulo() + ". La cuenta asciende a " + Articulos.getReferenciaArticulo().getSubtotal() + "€");
+                    break;
+                 case 17:
+                    pedido.getReferencia().nuevoBolsaProducto(BolsasProductos.BOLSA_1);
+                    System.out.println("Has añadido a tu cesta el artículo " + Articulos.BOLSA_1.getNombreArticulo() + ". La cuenta asciende a " + BolsasProdcutos.getReferenciaBolsaProductos().getSubtotal() + "€");
+                    break;
+                case 18:
+                    pedido.getReferencia().nuevoBolsaProducto(Articulos.BOLSA_2);
+                    System.out.println("Has añadido a tu cesta el artículo " + Articulos.LAYS_CAMPESINAS.getNombreArticulo() + ". La cuenta asciende a " + BolsasProdcutos.getReferenciaBolsaProductos().getSubtotal() + "€");
+                    break;
+                case 19:
+                    pedido.getReferencia().nuevoBolsaProducto(Articulos.BOLSA_3);
+                    System.out.println("Has añadido a tu cesta el artículo " + Articulos.LAYS_CAMPESINAS.getNombreArticulo() + ". La cuenta asciende a " + BolsasProdcutos.getReferenciaBolsaProductos().getSubtotal() + "€");
+                    break;
+                case 20:
+                    pedido.getReferencia().nuevoBolsaProducto(Articulos.BOLSA_4);
+                    System.out.println("Has añadido a tu cesta el artículo " + Articulos.LAYS_CAMPESINAS.getNombreArticulo() + ". La cuenta asciende a " + BolsasProdcutos.getReferenciaBolsaProductos().getSubtotal() + "€");
+                    break;
+                 case 21:
+                    pedido.getReferencia().nuevoBolsaProducto(Articulos.BOLSA_5);
+                    System.out.println("Has añadido a tu cesta el artículo " + Articulos.LAYS_CAMPESINAS.getNombreArticulo() + ". La cuenta asciende a " + BolsasProdcutos.ggetReferenciaBolsaProductos().getSubtotal() + "€");
+                    break;
+                default:
+                    System.out.println("Selecciona un artículo correcto");
+                    continue;
+            }
+
+            System.out.print("¿Quieres añadir algún elemento más a la cesta? (Si/No): ");
+            cont = s.next();
+            if (cont.equalsIgnoreCase("No")) {
+                addElement = !addElement; //Cambiamos el valor de la variable
+            }
+
+        }
+        
+        }
+        
+

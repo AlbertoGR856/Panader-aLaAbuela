@@ -30,6 +30,13 @@ public class Pedido {
         this.articulosPedido.add(a);
         this.calcularPrecio(a);
     }
+    
+    
+     public void nuevoBolsaProducto(BolsasProductos b) {
+        this.bolsaProductosPedido.add(b);
+        this.calcularPrecio(a);
+    }
+
 
     private void calcularPrecio(Articulos a) {
         this.total += a.getPrecioArticulo();
@@ -71,12 +78,7 @@ public class Pedido {
             contenidoArticulo += "- "+ articulosPedido.get(i);
         }
         return ("El pedido contiene: \n"  + contenidoArticulo);
-        
-        String contenidoBolsaProducto  = "";
-        for (int i = 0; i < bolsaProductosPedido.size(); i++) {
-            contenidoBolsaProducto  += "- "+ bolsaProductosPedido.get(i);
-        }
-        return ("El pedido contiene: \n"  + contenidoBolsaProducto );
+    
         
     }
     
