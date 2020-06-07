@@ -89,10 +89,8 @@ public class Pedido {
             contenidoArticulo += "- "+ articulosPedido.get(i);
         }
         return ("El pedido contiene: \n"  + contenidoArticulo);
-    
         
-    }
-    
+    }  
     
 }
     
