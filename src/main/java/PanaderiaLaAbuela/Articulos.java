@@ -10,6 +10,9 @@ package PanaderiaLaAbuela;
  * @author GR6
  */
 public enum Articulos {
+    
+    //Añadimos en el enum, los diversos articulos de la panaderia de la abuela
+    //con un numero de referencia, una descripcion del articulo y su precio en €.
 
     BOTELLA_MONSTER(1, "botella de monster ", 4),
     BOLSA_PATATAS_FRITAS(2, "bolsa de patatas fritas", 2),
@@ -28,16 +31,19 @@ public enum Articulos {
     BOTELLA_OXIGENO_ACTIVO(15, "botella de oxígeno activo", 2),
     LAYS_CAMPESINAS(16, "lays sabor campesinas", 2);
 
+    // Declaramos los atributos de la clase Articulos
     private int referenciaArticulo;
     private String nombreArticulo;
     private double precioArticulo;
 
+    // Creamos un constructor parametrizado
     private Articulos(int referenciaArticulo, String nombreArticulo, double precioArticulo) {
         this.referenciaArticulo = referenciaArticulo;
         this.nombreArticulo = nombreArticulo;
         this.precioArticulo = precioArticulo;
     }
 
+    // Añadimos getter y setters
     public int getReferenciaArticulo() {
         return referenciaArticulo;
     }
@@ -50,6 +56,7 @@ public enum Articulos {
         return precioArticulo;
     }
 
+    // Añadimos un metodo toString
     @Override
     public String toString() {
         return this.getNombreArticulo() + " (que cuesta " + this.getPrecioArticulo() + "€)\n";

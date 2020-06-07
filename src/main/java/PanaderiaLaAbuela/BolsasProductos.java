@@ -11,6 +11,8 @@ package PanaderiaLaAbuela;
  */
 public enum BolsasProductos {
 
+    //Añadimos en el enum, los diversas bolsas de productos de la panaderia de la abuela
+    //con un numero de referencia y una descripcion del articulo.
     BOLSA_1(17, "bolsita de chucherías, red bull,\n"
             + "coca-cola, 2 barras de pan, botella de\n"
             + "oxígeno activo, lays sabor campesinas,\n"
@@ -26,14 +28,17 @@ public enum BolsasProductos {
             + "lays sabor campesinas"),
     BOLSA_5(21, "configurable pero no tendrá descuento");
 
+    // Declaramos los atributos de la clase Articulos
     private int referenciaBolsaProductos;
     private String nombreBolsaProductos;
 
+    // Creamos un constructor parametrizado
     private BolsasProductos(int referenciaBolsaProductos, String nombreBolsaProductos) {
         this.referenciaBolsaProductos = referenciaBolsaProductos;
         this.nombreBolsaProductos = nombreBolsaProductos;
     }
 
+    // Añadimos getter y setters
     public int getReferenciaBolsaProductos() {
         return referenciaBolsaProductos;
     }
@@ -50,6 +55,7 @@ public enum BolsasProductos {
         this.nombreBolsaProductos = nombreBolsaProductos;
     }
 
+    // Añadimos un metodo toString
     @Override
     public String toString() {
         return "BolsasProductos{" + "referenciaBolsaProductos=" + referenciaBolsaProductos + ", nombreBolsaProductos=" + nombreBolsaProductos + '}';
