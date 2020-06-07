@@ -15,15 +15,23 @@ import java.util.Scanner;
 public class Prueba {
 
     public static void main(String[] args) {
+        
+        // Creamos un teclado
         Scanner s = new Scanner(System.in);
+        // Declaramos las variables que vamos a utilizar
         boolean addElement = true;
         int sel;
         String cont;
+        // Creamos un objeto para agregar los articulos y bolsas de productos
         Pedido pedido = new Pedido();
+        // Se muestran por consola los distintos valores
         System.out.println("Bienvenido a la panadería de la Abuela");
         System.out.println("Seleccione sus articulos");
         System.out.println("Las bolsas de prodcutos a excepcion de la numero 5 "
                 + "tienen un descuento de 1,5€");
+        
+        // Se crea una estructura de repeticion do para seleccionar uno de los articulos
+        // o bolsas de productos
         do {
             System.out.println("Tenemos disponible: \n"
                     + "1. Botella de Monster (" + Articulos.BOTELLA_MONSTER.getPrecioArticulo() + "€)\n"
@@ -42,9 +50,14 @@ public class Prueba {
                     + "14. Barras de pan (" + Articulos.BARRAS_PAN.getPrecioArticulo() + "€)"
                     + "15. Botella de oxígeno activo (" + Articulos.BOTELLA_OXIGENO_ACTIVO.getPrecioArticulo() + "€)"
                     + "16. Lays sabor campesinas (" + Articulos.LAYS_CAMPESINAS.getPrecioArticulo() + "€)");
+                    + "17. Bolsa de productos 1" (BolsasProductos.BOLSA_1);
+                    + "18. Bolsa de productos 2" (BolsasProductos.BOLSA_2);
+                    + "19. Bolsa de productos 3 " (BolsasProductos.BOLSA_3);
+                    + "20. Bolsa de productos 4 " (BolsasProductos.BOLSA_4);
+                    + "21. Bolsa de productos 5 " (BolsasProductos.BOLSA_5);
             System.out.print("Selecciona un producto: ");
 
-            System.out.print("Selecciona un elemento: ");
+           // Se utiliza un try catch para determinar que no nos alimos dl rango de valor establecido
             try {
                 sel = s.nextInt();
             } catch (InputMismatchException ime) {
@@ -53,6 +66,8 @@ public class Prueba {
                 System.out.print("Selecciona un elemento: ");
                 sel = s.nextInt();
             }
+            
+            // Se utiliza un estructura de selección (swtich) para alojar en los diferentes casos los articulos y bolsas de productos
             switch (sel) {
                 case 1:
                     pedido.getReferencia().nuevoArticulo(Articulos.BOTELLA_MONSTER);
@@ -143,6 +158,7 @@ public class Prueba {
                     continue;
             }
 
+            // Se preguntar asi se quierena añadir ams productos utilizando una estructura de selección if
             System.out.print("¿Quieres añadir algún elemento más a la cesta? (Si/No): ");
             cont = s.next();
             if (cont.equalsIgnoreCase("No")) {

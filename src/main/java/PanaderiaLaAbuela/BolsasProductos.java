@@ -28,7 +28,7 @@ public enum BolsasProductos {
             + "lays sabor campesinas"),
     BOLSA_5(21, "configurable pero no tendrá descuento");
 
-    // Declaramos los atributos de la clase Articulos
+    // Declaramos los atributos de la clase BolsasProductos
     private int referenciaBolsaProductos;
     private String nombreBolsaProductos;
 
