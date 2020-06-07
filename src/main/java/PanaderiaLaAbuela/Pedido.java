@@ -64,4 +64,25 @@ public class Pedido {
         this.total = subtotal;
     }
 
+    @Override
+    public String toString() {
+         String contenidoArticulo = "";
+        for (int i = 0; i < articulosPedido.size(); i++) {
+            contenidoArticulo += "- "+ articulosPedido.get(i);
+        }
+        return ("El pedido contiene: \n"  + contenidoArticulo);
+        
+        String contenidoBolsaProducto  = "";
+        for (int i = 0; i < bolsaProductosPedido.size(); i++) {
+            contenidoBolsaProducto  += "- "+ bolsaProductosPedido.get(i);
+        }
+        return ("El pedido contiene: \n"  + contenidoBolsaProducto );
+        
+    }
+    
+    
 }
+    
+
+    
+
